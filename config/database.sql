@@ -1,0 +1,2 @@
+CREATE SCHEMA IF NOT EXISTS bncserver;
+CREATE SCHEMA IF NOT EXISTS bncservertest;

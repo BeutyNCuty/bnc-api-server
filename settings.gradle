@@ -1,0 +1,4 @@
+rootProject.name = 'BNC-api-server'
+
+include 'common'
+include 'api'
