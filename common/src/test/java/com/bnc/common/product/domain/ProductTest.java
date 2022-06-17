@@ -1,5 +1,6 @@
 package com.bnc.common.product.domain;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
@@ -75,14 +76,39 @@ class ProductTest {
     @Test
     void 상품_변경_성공(){
         Product product = new Product("상품1" , 10000 , "정보1","브랜드1");
-        Product product2 = new Product("상품2" , 20000 , "정보2","브랜드2");
 
-        product.change(product2);
+        product.change("상품2" , 20000 , "정보2");
 
         assertThat(product.getProductName()).isEqualTo("상품2");
         assertThat(product.getProductPrice()).isEqualTo(20000);
         assertThat(product.getProductInfo()).isEqualTo("정보2");
-        assertThat(product.getProductBrand()).isEqualTo("브랜드2");
+    }
+
+    @Test
+    void 상품_이름_변경_성공(){
+        Product product = new Product("상품1" , 10000 , "정보1","브랜드1");
+
+        product.changeProductName("상품2");
+
+        Assertions.assertThat(product.getProductName()).isEqualTo("상품2");
+    }
+
+    @Test
+    void 상품_정보_변경_성공(){
+        Product product = new Product("상품1" , 10000 , "정보1","브랜드1");
+
+        product.change("정보2");
+
+        Assertions.assertThat(product.getProductInfo()).isEqualTo("정보2");
+    }
+
+    @Test
+    void 상품_가격_변경_성공(){
+        Product product = new Product("상품1" , 10000 , "정보1","브랜드1");
+
+        product.change(20000);
+
+        Assertions.assertThat(product.getProductPrice()).isEqualTo(20000);
     }
 
     @Test

@@ -41,11 +41,19 @@ public class Product extends BaseEntity {
         this.productBrand = productBrand;
     }
 
-    public void change(Product product){
-        this.productName = product.getProductName();
-        this.productBrand = product.getProductBrand();
-        this.productInfo = product.getProductInfo();
-        this.productPrice= product.getProductPrice();
+    public void change(String productName, int productPrice, String productInfo){
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productInfo = productInfo;
+    }
+    public void change(String productInfo){
+        this.productInfo = productInfo;
+    }
+    public void changeProductName(String productName){
+        this.productName = productName;
+    }
+    public void change(int productPrice){
+        this.productPrice = productPrice;
     }
 
     public void deleteProduct(){
