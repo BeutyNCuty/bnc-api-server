@@ -6,7 +6,6 @@ import com.bnc.common.member.domain.Member;
 import java.util.List;
 
 public interface MemberService  {
-
     public List<Member> findByGrade(Grade grade);
 
     public Member checkId(String userId);
