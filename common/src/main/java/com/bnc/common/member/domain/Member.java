@@ -20,7 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
         }
 )
 public class Member extends BaseEntity {
-    @Column(nullable = false, name = "user_Id")
+    @Column(nullable = false, name = "user_Id", unique = true)
     private String userId;
     private String password;
     private String addr;
