@@ -1,19 +1,19 @@
-package com.bnc.api.member.controller;
+package com.bnc.api.controller;
 
 import com.bnc.common.member.service.MemberService;
-import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreatRequest;
-import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreateData;
-import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreateResponse;
-import com.bnc.api.member.controller.dto.MemberDetailDto.MemberDetailResponse;
-import com.bnc.api.member.service.MemberAppService;
+import com.bnc.api.controller.dto.MemberCreateDto.MemberCreatRequest;
+import com.bnc.api.controller.dto.MemberCreateDto.MemberCreateData;
+import com.bnc.api.controller.dto.MemberCreateDto.MemberCreateResponse;
+import com.bnc.api.controller.dto.MemberDetailDto.MemberDetailResponse;
+import com.bnc.api.service.MemberAppService;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.web.bind.annotation.*;
 
-import static com.bnc.api.member.controller.dto.MemberDetailDto.MemberDetailData.readMember;
-import static com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateData.update;
-import static com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateRequest;
-import static com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateResponse;
+import static com.bnc.api.controller.dto.MemberDetailDto.MemberDetailData.readMember;
+import static com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateData.update;
+import static com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateRequest;
+import static com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateResponse;
 
 
 @RestController
