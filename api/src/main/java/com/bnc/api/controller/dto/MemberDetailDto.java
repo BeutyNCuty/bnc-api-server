@@ -1,4 +1,4 @@
-package com.bnc.api.member.controller.dto;
+package com.bnc.api.controller.dto;
 
 import com.bnc.common.member.domain.Grade;
 import com.bnc.common.member.domain.Member;
@@ -23,23 +23,14 @@ public class MemberDetailDto {
     @AllArgsConstructor
     @ToString
     public static class MemberDetailData {
-
         private String userId;
-
         private String password;
-
         private String addr;
-
         private String phone;
-
         private Grade grade;
-
         private long totalPrice;
-
         private OffsetDateTime creatAt ;
-
         private MemberStatus memberStatus;
-
 
         public static MemberDetailData readMember(Member member){
             return new MemberDetailData(member.getUserId(), member.getPassword(), member.getAddr(),

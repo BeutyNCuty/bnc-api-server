@@ -1,7 +1,7 @@
-package com.bnc.api.member.service;
+package com.bnc.api.service;
 
-import com.bnc.api.member.service.dto.MemberCreateDto;
-import com.bnc.api.member.service.dto.MemberUpdateDto;
+import com.bnc.api.service.dto.MemberCreateDto;
+import com.bnc.api.service.dto.MemberUpdateDto;
 import com.bnc.common.member.domain.Member;
 
 public interface MemberAppService {
