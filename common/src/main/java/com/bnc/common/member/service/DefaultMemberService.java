@@ -15,15 +15,13 @@ import java.util.List;
 public class DefaultMemberService implements MemberService {
 
     private final MemberRepository memberRepository;
+    public Member checkId(String userId) {
+        return memberRepository.findByUserId(userId).orElseThrow();
+    }
 
     @Override
     public List<Member> findByGrade(Grade grade) {
         return memberRepository.findByGrade(grade);
-    }
-
-    @Override
-    public Member checkId(String userId) {
-        return memberRepository.findByUserId(userId).orElseThrow();
     }
 
     @Override

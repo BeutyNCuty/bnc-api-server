@@ -1,4 +1,4 @@
-package com.bnc.api.controller.dto;
+package com.bnc.api.member.controller.dto;
 
 import com.bnc.common.member.domain.Grade;
 import com.bnc.common.member.domain.Member;
@@ -9,43 +9,50 @@ import lombok.ToString;
 
 import java.time.OffsetDateTime;
 
-public class MemberCreateDto {
-
+public class MemberUpdateDto {
 
     @Getter
     @AllArgsConstructor
-    public static class MemberCreatRequest {
+    public static class MemberUpdateRequest {
         private String userId;
         private String password;
         private String addr;
         private String phone;
 
-        public com.bnc.api.service.dto.MemberCreateDto toDto(){
-            return new com.bnc.api.service.dto.MemberCreateDto(this.userId, this.password, this.addr, this.phone);
+        public com.bnc.api.member.service.dto.MemberUpdateDto toDto(){
+            return new com.bnc.api.member.service.dto.MemberUpdateDto(this.userId ,this.password, this.addr, this.phone);
         }
     }
 
     @Getter
     @AllArgsConstructor
-    public static class MemberCreateResponse {
-        private MemberCreateData member;
+    public static class MemberUpdateResponse {
+        private MemberUpdateData member;
     }
 
     @Getter
     @AllArgsConstructor
     @ToString
-    public static class MemberCreateData {
+    public static class MemberUpdateData {
+
         private String userId;
+
         private String password;
+
         private String addr;
+
         private String phone;
+
         private Grade grade;
+
         private long totalPrice;
+
         private OffsetDateTime creatAt ;
+
         private MemberStatus memberStatus;
 
-        public static MemberCreateData createMember(Member member){
-            return new MemberCreateData(member.getUserId(), member.getPassword(), member.getAddr(),
+        public static MemberUpdateData update(Member member){
+            return new MemberUpdateData(member.getUserId(), member.getPassword(), member.getAddr(),
                     member.getPhone(), member.getGrade(), member.getTotalPrice(), member.getCreatAt(), member.getMemberStatus());
         }
     }
