@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.logging.log4j.util.Strings;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,7 +18,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 @Getter
 @NoArgsConstructor
 public class Product extends BaseEntity {
-
+    @Column(nullable = false, name = "product_Name" , unique = true)
     private String productName;
 
     private int productPrice;
@@ -26,10 +27,15 @@ public class Product extends BaseEntity {
 
     private String productBrand;
 
+    private double sale;
+
+    private int salePrice;
+
+
     @Enumerated(EnumType.STRING)
     private ProductStatus productStatus = CREATED;
 
-    public Product(String productName, int productPrice, String productInfo, String productBrand) {
+    public Product(String productName, int productPrice, String productInfo, String productBrand , double sale) {
         checkArgument(Strings.isNotBlank(productName));
         checkArgument(Strings.isNotBlank(String.valueOf(productPrice)));
         checkArgument(Strings.isNotBlank(productInfo));
@@ -39,6 +45,8 @@ public class Product extends BaseEntity {
         this.productPrice = productPrice;
         this.productInfo = productInfo;
         this.productBrand = productBrand;
+        this.sale = sale;
+        this.salePrice = (int)Math.ceil(productPrice*sale);
     }
 
     public void change(String productName, int productPrice, String productInfo){
