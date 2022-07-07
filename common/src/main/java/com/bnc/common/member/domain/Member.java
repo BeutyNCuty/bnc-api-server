@@ -1,6 +1,6 @@
 package com.bnc.common.member.domain;
 
-import com.bnc.common.support.BaseEntity;
+import com.bnc.common.product.support.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

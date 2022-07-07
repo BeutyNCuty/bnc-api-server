@@ -1,10 +1,7 @@
 package com.bnc.common.member.service;
 
-import com.bnc.common.member.domain.Grade;
 import com.bnc.common.member.domain.Member;
 import com.bnc.common.member.domain.MemberRepository;
-import com.bnc.common.member.domain.MemberStatus;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 import static com.bnc.common.member.domain.Grade.Bronze;
-import static com.bnc.common.member.domain.Grade.Gold;
 import static com.bnc.common.member.domain.MemberStatus.DELETED;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @Transactional
 @SpringBootTest

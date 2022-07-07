@@ -1,6 +1,6 @@
 package com.bnc.common.product.domain;
 
-import com.bnc.common.support.BaseEntity;
+import com.bnc.common.product.support.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.logging.log4j.util.Strings;

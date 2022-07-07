@@ -1,4 +1,4 @@
-package com.bnc.common.support;
+package com.bnc.common.product.support;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
