@@ -26,10 +26,13 @@ public class Product extends BaseEntity {
 
     private String productBrand;
 
+    private double sale;
+
+    private int salePrice;
     @Enumerated(EnumType.STRING)
     private ProductStatus productStatus = CREATED;
 
-    public Product(String productName, int productPrice, String productInfo, String productBrand) {
+    public Product(String productName, int productPrice, String productInfo, String productBrand , double sale) {
         checkArgument(Strings.isNotBlank(productName));
         checkArgument(Strings.isNotBlank(String.valueOf(productPrice)));
         checkArgument(Strings.isNotBlank(productInfo));
@@ -39,6 +42,8 @@ public class Product extends BaseEntity {
         this.productPrice = productPrice;
         this.productInfo = productInfo;
         this.productBrand = productBrand;
+        this.sale = sale;
+        this.salePrice = (int)Math.ceil(productPrice*sale);
     }
 
     public void change(String productName, int productPrice, String productInfo){
