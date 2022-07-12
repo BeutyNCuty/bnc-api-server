@@ -1,4 +1,4 @@
-package com.bnc.api.controller;
+package com.bnc.api.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

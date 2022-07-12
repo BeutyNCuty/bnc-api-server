@@ -10,7 +10,6 @@ public interface MemberService  {
 
     public Member checkId(String userId);
 
-
     public Member member(long id);
 
     public void memberWithdrawal(long id);

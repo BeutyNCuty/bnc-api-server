@@ -1,7 +1,7 @@
-package com.bnc.api.service;
+package com.bnc.api.member.service;
 
-import com.bnc.api.service.dto.MemberCreateDto;
-import com.bnc.api.service.dto.MemberUpdateDto;
+import com.bnc.api.member.service.dto.MemberCreateDto;
+import com.bnc.api.member.service.dto.MemberUpdateDto;
 import com.bnc.common.member.domain.Member;
 import com.bnc.common.member.domain.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ public class DefaultMemberAppService implements MemberAppService{
     private final MemberRepository memberRepository;
 
     @Override
-    public Member create(MemberCreateDto dto) {
+    public Member createMember(MemberCreateDto dto) {
         val member = new Member(dto.getUserId(), dto.getPassword(), dto.getAddr(), dto.getPhone());
 
         return memberRepository.save(member);
