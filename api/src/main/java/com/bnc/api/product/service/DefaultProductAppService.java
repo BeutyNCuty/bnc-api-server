@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class DefaultProductService implements ProductAppService {
+public class DefaultProductAppService implements ProductAppService {
 
     private final ProductRepository productRepository;
 
