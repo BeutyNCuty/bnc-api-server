@@ -1,4 +1,4 @@
-package com.bnc.api.controller.dto;
+package com.bnc.api.member.controller.dto;
 
 import com.bnc.common.member.domain.Grade;
 import com.bnc.common.member.domain.Member;
@@ -20,8 +20,8 @@ public class MemberCreateDto {
         private String addr;
         private String phone;
 
-        public com.bnc.api.service.dto.MemberCreateDto toDto(){
-            return new com.bnc.api.service.dto.MemberCreateDto(this.userId, this.password, this.addr, this.phone);
+        public com.bnc.api.member.service.dto.MemberCreateDto toDto(){
+            return new com.bnc.api.member.service.dto.MemberCreateDto(this.userId, this.password, this.addr, this.phone);
         }
     }
 

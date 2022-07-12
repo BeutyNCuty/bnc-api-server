@@ -1,7 +1,7 @@
-package com.bnc.api.controller;
+package com.bnc.api.member.controller;
 
-import com.bnc.api.controller.dto.MemberCreateDto.MemberCreatRequest;
-import com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateRequest;
+import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreatRequest;
+import com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateRequest;
 import com.bnc.api.support.BaseApiTest;
 import com.bnc.common.member.domain.Member;
 import com.bnc.common.member.domain.MemberRepository;;

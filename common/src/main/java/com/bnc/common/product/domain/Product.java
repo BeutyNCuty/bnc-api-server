@@ -46,22 +46,15 @@ public class Product extends BaseEntity {
         this.salePrice = (int)Math.ceil(productPrice*sale);
     }
 
-    public void change(String productName, int productPrice, String productInfo){
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productInfo = productInfo;
-    }
-    public void change(String productInfo){
-        this.productInfo = productInfo;
-    }
-    public void changeProductName(String productName){
-        this.productName = productName;
-    }
-    public void change(int productPrice){
-        this.productPrice = productPrice;
-    }
+    public void change(String productName, int productPrice, String productInfo, double sale){
+             this.productName = productName;
+             this.productPrice = productPrice;
+             this.productInfo = productInfo;
+             this.sale = sale;
+             this.salePrice = (int)Math.ceil(productPrice*sale);
+         }
 
-    public void deleteProduct(){
-        this.productStatus = DELETED;
-    }
+         public void deleteProduct(){
+             this.productStatus = DELETED;
+         }
 }

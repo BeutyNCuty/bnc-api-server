@@ -1,4 +1,4 @@
-package com.bnc.api.controller.dto;
+package com.bnc.api.member.controller.dto;
 
 import com.bnc.common.member.domain.Grade;
 import com.bnc.common.member.domain.Member;

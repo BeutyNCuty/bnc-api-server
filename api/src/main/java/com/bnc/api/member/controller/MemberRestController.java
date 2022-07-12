@@ -1,19 +1,18 @@
-package com.bnc.api.controller;
+package com.bnc.api.member.controller;
 
+import com.bnc.api.member.controller.dto.MemberDetailDto;
 import com.bnc.common.member.service.MemberService;
-import com.bnc.api.controller.dto.MemberCreateDto.MemberCreatRequest;
-import com.bnc.api.controller.dto.MemberCreateDto.MemberCreateData;
-import com.bnc.api.controller.dto.MemberCreateDto.MemberCreateResponse;
-import com.bnc.api.controller.dto.MemberDetailDto.MemberDetailResponse;
-import com.bnc.api.service.MemberAppService;
+import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreatRequest;
+import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreateData;
+import com.bnc.api.member.controller.dto.MemberCreateDto.MemberCreateResponse;
+import com.bnc.api.member.service.MemberAppService;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.web.bind.annotation.*;
 
-import static com.bnc.api.controller.dto.MemberDetailDto.MemberDetailData.readMember;
-import static com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateData.update;
-import static com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateRequest;
-import static com.bnc.api.controller.dto.MemberUpdateDto.MemberUpdateResponse;
+import static com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateData.update;
+import static com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateRequest;
+import static com.bnc.api.member.controller.dto.MemberUpdateDto.MemberUpdateResponse;
 
 
 @RestController
@@ -26,16 +25,16 @@ public class MemberRestController {
 
     @PostMapping("/joinMember")
     public MemberCreateResponse createMember(@RequestBody MemberCreatRequest req){
-        val member = memberAppService.create(req.toDto());
+        val member = memberAppService.createMember(req.toDto());
 
        return new MemberCreateResponse(MemberCreateData.createMember(member));
     }
 
     @GetMapping("/detailMember/{id}")
-    public MemberDetailResponse detailMember(@PathVariable long id){
+    public MemberDetailDto.MemberDetailResponse detailMember(@PathVariable long id){
         val member = memberService.member(id);
 
-        return new MemberDetailResponse(readMember(member));
+        return new MemberDetailDto.MemberDetailResponse(MemberDetailDto.MemberDetailData.readMember(member));
     }
 
     @PatchMapping("/modifyMember")

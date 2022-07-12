@@ -79,39 +79,15 @@ class ProductTest {
     void 상품_변경_성공(){
         Product product = new Product("상품1" , 10000 , "정보1","브랜드1",0.9);
 
-        product.change("상품2" , 20000 , "정보2");
+        product.change("상품2" , 20000 , "정보2", 0.8);
 
         assertThat(product.getProductName()).isEqualTo("상품2");
         assertThat(product.getProductPrice()).isEqualTo(20000);
         assertThat(product.getProductInfo()).isEqualTo("정보2");
+        assertThat(product.getProductInfo()).isEqualTo(16000);
     }
 
-    @Test
-    void 상품_이름_변경_성공(){
-        Product product = new Product("상품1" , 10000 , "정보1","브랜드1",0.9);
 
-        product.changeProductName("상품2");
-
-        Assertions.assertThat(product.getProductName()).isEqualTo("상품2");
-    }
-
-    @Test
-    void 상품_정보_변경_성공(){
-        Product product = new Product("상품1" , 10000 , "정보1","브랜드1",0.9);
-
-        product.change("정보2");
-
-        Assertions.assertThat(product.getProductInfo()).isEqualTo("정보2");
-    }
-
-    @Test
-    void 상품_가격_변경_성공(){
-        Product product = new Product("상품1" , 10000 , "정보1","브랜드1",0.9);
-
-        product.change(20000);
-
-        Assertions.assertThat(product.getProductPrice()).isEqualTo(20000);
-    }
 
     @Test
     void 상품_삭제_성공(){
