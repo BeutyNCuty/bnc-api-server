@@ -7,4 +7,5 @@ import com.bnc.common.member.domain.Member;
 public interface MemberAppService {
     Member createMember(MemberCreateDto member);
     Member memberUpdate(MemberUpdateDto member);
+    Member removeMember(Long id);
 }
