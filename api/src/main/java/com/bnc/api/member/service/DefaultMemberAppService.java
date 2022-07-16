@@ -31,4 +31,13 @@ public class DefaultMemberAppService implements MemberAppService{
 
         return member;
     }
+
+    @Override
+    public Member removeMember(Long id) {
+        Member byId = memberRepository.findById(id).orElseThrow();
+
+        byId.delete();
+
+        return byId;
+    }
 }

@@ -1,6 +1,5 @@
 package com.bnc.common.product.domain;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
@@ -84,10 +83,8 @@ class ProductTest {
         assertThat(product.getProductName()).isEqualTo("상품2");
         assertThat(product.getProductPrice()).isEqualTo(20000);
         assertThat(product.getProductInfo()).isEqualTo("정보2");
-        assertThat(product.getProductInfo()).isEqualTo(16000);
+        assertThat(product.getSalePrice()).isEqualTo(16000);
     }
-
-
 
     @Test
     void 상품_삭제_성공(){
