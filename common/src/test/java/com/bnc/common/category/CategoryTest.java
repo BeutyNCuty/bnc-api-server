@@ -27,5 +27,4 @@ class CategoryTest {
     void 카테고리가_null_이거나_빈값_이면_실패(String name){
         Assertions.assertThatIllegalArgumentException().isThrownBy(() -> new Category(name));
     }
-
 }

@@ -46,7 +46,6 @@ class MemberRepositoryTest {
     }
 
     @Test
-    @Rollback(value = true)
     void 멤버_생성_성공() {
         Member member = new Member("cc1212", "123", "010", "부천");
 

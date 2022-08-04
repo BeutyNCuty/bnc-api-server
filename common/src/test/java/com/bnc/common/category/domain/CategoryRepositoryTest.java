@@ -77,5 +77,4 @@ class CategoryRepositoryTest {
 
         Assertions.assertThat(foundCategory.getChild().get(0).getProducts()).containsExactly(product1, product2);
     }
-
 }

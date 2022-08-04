@@ -23,5 +23,4 @@ class ProductRepositoryTest {
 
         assertThat(foundProduct.getProductName()).isEqualTo("상품이름1");
     }
-
 }
