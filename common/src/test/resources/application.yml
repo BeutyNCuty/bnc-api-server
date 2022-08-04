@@ -1,13 +1,13 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${db.url:jdbc:mysql://localhost:3306/bncservertest}
+    url: ${db.url:jdbc:mysql://localhost:3306/bncserver}
     username: ${db.username:root}
     password: ${db.password:1234}
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: false

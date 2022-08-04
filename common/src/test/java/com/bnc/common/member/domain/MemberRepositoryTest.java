@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.annotation.Rollback;
+
 
 import java.util.List;
 
@@ -46,6 +46,7 @@ class MemberRepositoryTest {
     }
 
     @Test
+    @Rollback(value = true)
     void 멤버_생성_성공() {
         Member member = new Member("cc1212", "123", "010", "부천");
 
