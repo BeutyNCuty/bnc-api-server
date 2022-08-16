@@ -29,7 +29,7 @@ public class DefaultMemberServiceTest {
     void 멤버_생성_성공(){
         Member member = defaultMemberAppService.createMember(new MemberCreateDto("aa","bb","123","12345678"));
 
-        Assertions.assertThat(member.getId()).isEqualTo("aa");
+        Assertions.assertThat(member.getUserId()).isEqualTo("aa");
         Assertions.assertThat(member.getPassword()).isEqualTo("bb");
         Assertions.assertThat(member.getAddr()).isEqualTo("123");
         Assertions.assertThat(member.getPhone()).isEqualTo("12345678");
