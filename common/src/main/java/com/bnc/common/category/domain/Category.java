@@ -47,7 +47,6 @@ public class Category {
     }
 
     public Category(String name, List<Product> products) {
-
         checkArgument(Strings.isNotBlank(name));
 
         this.name = name;
