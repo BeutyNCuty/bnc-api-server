@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body {
+    width: 70%;
+    margin: auto;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    width: 100%;
+}

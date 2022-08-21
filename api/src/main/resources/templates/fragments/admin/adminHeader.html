@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<script>
+    $(document).ready(function(){
+
+    $('#categoryBtn').click(function (){
+        location.href = '/createCategoryForm';
+    });
+    $('#adminPage').click(function (){
+        location.href = '/adminPageForm';
+    });
+});
+</script>
+
+<div th:fragment="header" id="header" class="header fixed-top d-flex align-items-center">
+    <div style="width: 100%">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+            <div class="container">
+                <!-- Brand -->
+                <a class="navbar-brand" href="/">
+                    Shopper.
+                </a>
+            </div>
+        </nav>
+    </div>
+</div><!-- End Header -->
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<script>
+
+</script>
+
+<div th:fragment="aside">
+    <div>
+        <nav class="mb-10 mb-md-0">
+            <div class="list-group list-group-sm list-group-strong list-group-flush-x">
+                <a class="list-group-item list-group-item-action dropend-toggle " href="account-orders.html">
+                    Orders
+                </a>
+                <a class="list-group-item list-group-item-action dropend-toggle " href="account-wishlist.html">
+                    Widhlist
+                </a>
+                <a class="list-group-item list-group-item-action dropend-toggle " href="account-personal-info.html">
+                    Personal Info
+                </a>
+                <a class="list-group-item list-group-item-action dropend-toggle " href="account-address.html">
+                    Addresses
+                </a>
+                <a class="list-group-item list-group-item-action dropend-toggle active" href="account-payment.html">
+                    Payment Methods
+                </a>
+                <a class="list-group-item list-group-item-action dropend-toggle" href="#!">
+                    Logout
+                </a>
+            </div>
+        </nav>
+    </div>
+</div><!-- End Header -->
+</html>

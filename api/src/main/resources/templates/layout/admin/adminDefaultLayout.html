@@ -10,12 +10,12 @@
 </head>
 
 <body>
-<header th:insert="fragments/header.html"></header>
+<header th:insert="fragments/admin/adminHeader.html"></header>
 
 <main style="padding-top: 107px!important;">
+    <aside th:insert="fragments/admin/adminAside.html"></aside>
     <section layout:fragment="content"></section>
 </main>
 
-<footer th:insert="fragments/footer.html"></footer>
 </body>
 </html>
