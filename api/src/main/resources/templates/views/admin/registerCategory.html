@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/admin/adminDefaultLayout}">
+
+<head>
+<script>
+    $(document).ready(function(){
+        retrieveFirstCategory();
+    });
+
+    //1차카테고리 호출
+    function retrieveFirstCategory(){
+        $.ajax({
+            type: "get",
+            url: "/retrievefirstCategory",
+            success: function(value){
+                $("#firstCategoryList").html("");
+
+                var num;
+                var str = "";
+
+                str += "<div class='col-12 col-md-4'>";
+                str += "<div class='form-group'>";
+                str += "<select id='firstCategory' class='form-select'>";
+                for (var i = 0; i < value.length; i++){
+                    var category = value[i];
+
+                    str += "<option value='"+category.id+"'>" + category.name + "</option>";
+
+                    if(i == 0){
+                        num = category.id;
+                    }
+                }
+                str += "</select>"
+                str += "</div>"
+                str += "</div>"
+
+                $("#firstCategoryList").append(str);
+
+                retrieveSecondCategory(num);
+            },
+            error: function (err){
+                console.log(err);
+            }
+        });
+    }
+
+    //2차카테고리 호출
+    function retrieveSecondCategory(id){
+        $.ajax({
+            type: "get",
+            url:"/retrieveChildCategory/" + id,
+            success : function (value){
+                $("#secondCategoryList").html("");
+
+                var str ="";
+                str += "<ul>";
+
+                if(value.length > 0){
+                    for(var i=0; i < value.length; i++){
+                        var category = value[i];
+
+                        str += "<li class='list-group-item list-group-item-action' value='" + category.id + "'>" + category.name + "</li>";
+                    }
+                }else{
+                    str += "<li class='list-group-item list-group-item-action'>등록된 카테고리가 없습니다.</li>";
+                }
+                str += "</ul>";
+
+                $("#secondCategoryList").append(str);
+            },
+            error: function (err){
+                console.log(err);
+            }
+        });
+    }
+
+    $(document).on('change', '#firstCategory', function (){
+
+        var selectedNum = $('#firstCategory option:selected').val();
+
+        retrieveSecondCategory(selectedNum);
+    })
+</script>
+</head>
+
+<section id="main" class="main container" layout:fragment="content">
+    <div id="firstCategoryList">
+
+    </div>
+
+    <div id="secondCategoryList">
+
+    </div>
+
+    <button class="btn btn-sm w-100 btn-outline-dark">AddCategoty</button>
+
+    <div class="form-group mb-md-0">
+        <label class="visually-hidden" for="addCategory"></label>
+        <input class="form-control form-control-dark" id="addCategory" type="text" placeholder="Enter the category!">
+
+        <button class="btn btn-xs btn-circle btn-white-primary"><i class="fe fe-edit-2"></i></button>
+    </div>
+
+</section><!-- End #main -->
+</html>

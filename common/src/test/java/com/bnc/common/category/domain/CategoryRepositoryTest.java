@@ -28,37 +28,36 @@ class CategoryRepositoryTest {
 
     @Test
     void 일차_카테고리_생성_성공(){
-        final Category category = new Category("Top");
+        final Category category = new Category("cate1");
 
         Category foundCategory = categoryRepository.save(category);
 
-        Assertions.assertThat(foundCategory.getName()).isEqualTo("Top");
+        Assertions.assertThat(foundCategory.getName()).isEqualTo("cate1");
     }
 
     @Test
     void 이차_카테고리_생성_생성(){
-        final Category category = new Category("Top");
+        final Category category = new Category("cate1");
 
-        final Category categoryFirstChild = new Category("shirt");
-        final Category categorySecondChild = new Category("knit");
+        final Category categoryFirstChild = new Category("childCate1");
+        final Category categorySecondChild = new Category("childCate2");
 
         category.addChildCategory(categoryFirstChild);
         category.addChildCategory(categorySecondChild);
 
         Category foudCategory = categoryRepository.save(category);
 
-        Assertions.assertThat(foudCategory.getName()).isEqualTo("Top");
+        Assertions.assertThat(foudCategory.getName()).isEqualTo("cate1");
 
         Assertions.assertThat(foudCategory.getChild()).containsExactly(categoryFirstChild, categorySecondChild);
     }
 
     @Test
-    @Rollback(value = false)
     void 상품_카테고리에_분류_성공(){
-        final Category category = new Category("Top");
+        final Category category = new Category("cate1");
 
-        Category categoryFirstChild = new Category("shirt");
-        Category categorySecondChild = new Category("knit");
+        Category categoryFirstChild = new Category("childCate1");
+        Category categorySecondChild = new Category("childCate2");
 
         List<Product> productList = new ArrayList<>();
 

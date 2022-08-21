@@ -17,10 +17,10 @@ class ProductRepositoryTest {
 
     @Test
     void 상품_이름_조회_성공() {
-        Product product = productRepository.save(new Product("상품이름1", 15000, "정보1", "브랜드1",0.9));
+        Product product = productRepository.save(new Product("상품이름2", 15000, "정보1", "브랜드1",0.9));
 
         Product foundProduct = productRepository.findByProductName(product.getProductName()).orElseThrow();
 
-        assertThat(foundProduct.getProductName()).isEqualTo("상품이름1");
+        assertThat(foundProduct.getProductName()).isEqualTo("상품이름2");
     }
 }
