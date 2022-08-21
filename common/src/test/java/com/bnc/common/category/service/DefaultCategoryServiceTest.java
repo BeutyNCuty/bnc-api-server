@@ -30,5 +30,4 @@ class DefaultCategoryServiceTest {
 
         Assertions.assertThat(foundCategory).contains(cate1);
     }
-
 }

@@ -30,5 +30,4 @@ public class CategoryControllerRetrieveDto {
             return new CategoryControllerRetrieveDto.CategoryRetrieveData(category.getId(), category.getName());
         }
     }
-
 }
